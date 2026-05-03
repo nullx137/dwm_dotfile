@@ -1,0 +1,4 @@
+#!/bin/bash
+# Toggle volume mute
+wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+kill -44 $(pidof dwmblocks)

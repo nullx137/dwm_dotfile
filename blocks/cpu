@@ -1,0 +1,4 @@
+#!/bin/bash
+# CPU temperature block
+temp=$(sensors 2>/dev/null | grep 'Package id 0' | awk '{print $4}' | sed 's/+//;s/°C//' || echo "N/A")
+echo " $temp°C "

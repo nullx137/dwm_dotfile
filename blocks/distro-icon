@@ -1,0 +1,3 @@
+#!/bin/bash
+# Distro icon - click opens rofi
+echo "  "

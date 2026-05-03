@@ -1,0 +1,3 @@
+#!/bin/bash
+kbd=$(setxkbmap -query 2>/dev/null | grep layout | awk '{print $2}' | tr '[:lower:]' '[:upper:]' || echo "EN")
+echo "  $kbd "

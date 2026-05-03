@@ -1,0 +1,10 @@
+#!/bin/bash
+if ping -c 1 8.8.8.8 -W 1 >/dev/null 2>&1; then
+    if iwconfig 2>/dev/null | grep -q "ESSID" && iwconfig 2>/dev/null | grep "ESSID" | grep -v "off"; then
+        echo "  "
+    else
+        echo " 󰈀 "
+    fi
+else
+    echo " ⚠️ "
+fi

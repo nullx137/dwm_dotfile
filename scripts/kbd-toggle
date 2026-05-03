@@ -1,0 +1,10 @@
+#!/bin/bash
+# Toggle keyboard layout
+current=$(setxkbmap -query 2>/dev/null | grep layout | awk '{print $2}')
+case "$current" in
+    us) setxkbmap ru ;;
+    ru) setxkbmap us ;;
+    *) setxkbmap us ;;
+esac
+# kill dwmblocks to refresh
+kill -44 $(pidof dwmblocks)
