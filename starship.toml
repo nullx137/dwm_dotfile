@@ -1,0 +1,121 @@
+# Минималистичная конфигурация
+format = """
+$os\
+$directory\
+$git_branch\
+$git_status\
+$fill\
+$python\
+$nodejs\
+$rust\
+$golang\
+$cmd_duration\
+$status\
+$line_break\
+$character"""
+
+# Разделитель
+[fill]
+symbol = " "
+
+# OS
+[os]
+style = "bold dimmed blue"
+format = "[\\[ $symbol \\]]($style) "
+disabled = false
+
+[os.symbols]
+Arch = ""
+Alpine = ""
+Debian = ""
+EndeavourOS = ""
+Fedora = ""
+Gentoo = ""
+Manjaro = ""
+Linux = ""
+Macos = ""
+NixOS = ""
+openSUSE = ""
+Redhat = ""
+SUSE = ""
+Ubuntu = ""
+Windows = ""
+Unknown = ""
+
+# Директория
+[directory]
+style = "bold cyan"
+format = "[$path ]($style)"
+truncation_length = 2
+truncation_symbol = "…/"
+home_symbol = "󰋜 "
+
+[directory.substitutions]
+"Documents" = "󰈙"
+"Downloads" = ""
+"Music" = ""
+"Pictures" = ""
+"Projects" = "󰲋"
+".config" = ""
+
+# Git ветка
+[git_branch]
+style = "bold purple"
+format = "[$branch]($style) "
+
+# Git статус — только самое важное
+[git_status]
+style = "bold red"
+format = '([$all_status$ahead_behind]($style) )'
+conflicted = "!"
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+untracked = "?"
+modified = "~"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+# Python
+[python]
+style = "bold yellow"
+format = '[$symbol$version]($style) '
+symbol = " "
+
+# Node.js
+[nodejs]
+style = "bold green"
+format = '[$symbol$version]($style) '
+symbol = "󰎙 "
+
+# Rust
+[rust]
+style = "bold red"
+format = '[$symbol$version]($style) '
+symbol = " "
+
+# Go
+[golang]
+style = "bold cyan"
+format = '[$symbol$version]($style) '
+symbol = " "
+
+# Длительность команды
+[cmd_duration]
+style = "dimmed yellow"
+format = "[$duration]($style) "
+min_time = 5000
+
+# Статус выхода
+[status]
+style = "bold red"
+format = "[$symbol]($style) "
+symbol = "✗"
+success_symbol = ""
+disabled = false
+
+# Символ приглашения
+[character]
+success_symbol = "[~>](bold green)"
+error_symbol = "[~>](bold red)"
